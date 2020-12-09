@@ -1,7 +1,6 @@
 import dotenv from 'dotenv';
 import createServer from './createServer';
 
-
 dotenv.config({ silent: true });
 
 const contextParams = {
@@ -10,8 +9,7 @@ const contextParams = {
   secrets: {
     MONGODB_URI: process.env.MONGODB_URI,
   },
-  collections: {
-  },
+  collections: {},
 };
 
 const server = createServer({ contextParams });

@@ -1,28 +1,21 @@
 import express from 'express';
 import logger from 'morgan';
-import cors from 'cors';
-import createContext from './context/createContext';
-import getRoutes from './routes';
-import { handleError } from './context/Errors';
 
-const createServer = ({ contextParams }) => {
+import routes from './routes/routes';
+import addContext from './utils/addContext';
+import handleError from './utils/handleError';
+
+const createServer = ({ options }) => {
   const app = express();
-  const context = createContext(contextParams);
-  const addContext = (req, res, next) => {
-    req.context = context;
-    next();
-  };
-  // middleware
 
+  // middleware
   app.use(logger('dev'));
   app.use(express.json());
-  app.use(addContext);
+  app.use(addContext(options));
 
   // routes
-  const routes = getRoutes(context);
   routes.forEach((route) => {
-    app.options(`/${route}`, cors({ methods: [route.method.toUpperCase()] }));
-    app[route.method](route.path, cors(route.cors), route.resolve);
+    app[route.method](route.path, route.handler);
   });
 
   app.use((req, res) => {
@@ -31,9 +24,11 @@ const createServer = ({ contextParams }) => {
 
   // Custom error handler needs to have 4 arguments for express to recognize it as an error handler
   // eslint-disable-next-line no-unused-vars
-  app.use(async (err, req, res, next) => {
-    await handleError(err, res);
-  });
+  app.use(handleError);
+  // app.use(async (err, req, res, next) => {
+  //   await handleError(err, res);
+  // });
+
   return app;
 };
 

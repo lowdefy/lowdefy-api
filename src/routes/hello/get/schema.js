@@ -1,7 +1,3 @@
-const schema = {
-  type: 'object',
-  required: [],
-  properties: {},
-};
+const schema = {};
 
 export default schema;
