@@ -1,0 +1,22 @@
+org: lowdefy
+service: lowdefy-telemetry-api
+app: lowdefy-telemetry-api
+
+frameworkVersion: '2'
+provider:
+  name: aws
+  runtime: nodejs12.x
+  versionFunctions: false
+  region: eu-west-1
+  deploymentPrefix: lowdefy-telemetry-api
+
+package:
+  include:
+    - dist/**
+
+functions:
+  lowdefy-telemetry-api-server:
+    handler: dist/handler.handler
+    name: lowdefy-telemetry-api-server
+    events:
+      - httpApi: '*'
