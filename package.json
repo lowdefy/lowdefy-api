@@ -1,7 +1,7 @@
 {
   "name": "@lowdefy/telemetry-api",
   "version": "0.0.0",
-  "private": true,
+  "license": "Apache-2.0",
   "description": "",
   "homepage": "https://lowdefy.com",
   "bugs": {
@@ -28,7 +28,9 @@
     "babel": "babel src --out-dir dist",
     "build": "yarn babel",
     "clean": "rm -rf dist && rm -rf dev",
+    "jest": "jest --coverage",
     "start": "nodemon dist/local.js",
+    "test": "yarn jest",
     "webpack": "webpack --config webpack.config.js"
   },
   "dependencies": {
