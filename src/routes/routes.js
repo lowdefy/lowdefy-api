@@ -21,8 +21,8 @@ const routes = [
   {
     path: '/hello',
     method: 'post',
-    resolver: helloGet.resolver,
-    schema: helloGet.schema,
+    resolver: helloPost.resolver,
+    schema: helloPost.schema,
   },
 ].map((route) => makeRouteHandler(route));
 

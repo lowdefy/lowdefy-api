@@ -16,8 +16,8 @@
 
 // eslint-disable-next-line no-unused-vars
 async function hello({ body, context }) {
-  const mongodb = await context.getMongoDb()
-  await mongodb.insertOne({ collection: 'hello', doc: body })
+  const mongodb = await context.getMongoDb();
+  await mongodb.insertOne({ collection: 'hello', doc: body });
   return { code: 200, status: 'Success', message: 'Inserted' };
 }
 

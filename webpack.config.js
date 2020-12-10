@@ -3,9 +3,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { dependencies, devDependencies } = require('./package.json');
 
 module.exports = {
-  entry: './src/handler.js',
+    entry: {
+    handler: './src/handler.js',
+    local: './src/local.js'
+  },
   output: {
-    filename: 'handler.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     libraryTarget: 'commonjs',
   },
