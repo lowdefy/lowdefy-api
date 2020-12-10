@@ -29,6 +29,7 @@
     "build": "yarn babel",
     "clean": "rm -rf dist && rm -rf dev",
     "start": "nodemon dist/local.js",
+    "test": "jest --coverage",
     "webpack": "webpack --config webpack.config.js"
   },
   "dependencies": {

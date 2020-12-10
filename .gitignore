@@ -4,7 +4,7 @@
 
 **/dist/*
 **/es/*
-**/coverage/*
+**/coverage/**
 **/.env
 
 .DS_Store
