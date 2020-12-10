@@ -1451,6 +1451,38 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lowdefy/ajv@npm:1.1.0":
+  version: 1.1.0
+  resolution: "@lowdefy/ajv@npm:1.1.0"
+  dependencies:
+    "@lowdefy/nunjucks": 1.1.0
+    ajv: 6.12.6
+    ajv-errors: 1.0.1
+  checksum: 430559805570028c7f571b9b48dee85192b806eb00b5e207b80aafb99ffd10d437740e3ee29eba3ad1852219b8a9a6f54d4681454917acdfb90f9298520a8ebe
+  languageName: node
+  linkType: hard
+
+"@lowdefy/helpers@npm:1.2.0":
+  version: 1.2.0
+  resolution: "@lowdefy/helpers@npm:1.2.0"
+  dependencies:
+    lodash.merge: 4.6.2
+    query-string: 6.13.7
+  checksum: 9831996059cffaef8a4cfdbeb763baf768bfbad203d44852706b68ae7a53f0caa864e3c15d05fd6daab286c760c1df3c7871a8feee871c3c5e9c581629a9287f
+  languageName: node
+  linkType: hard
+
+"@lowdefy/nunjucks@npm:1.1.0":
+  version: 1.1.0
+  resolution: "@lowdefy/nunjucks@npm:1.1.0"
+  dependencies:
+    "@lowdefy/helpers": 1.2.0
+    nunjucks: 3.2.2
+    nunjucks-date-filter: 0.1.1
+  checksum: 21c17bca790d26f5d55562a7f3219752120aea93926f4ee544857df99fa8c458321a4045a7327ee52e98e57578604201e42fae9793e0579a0cf33b040302b9bb
+  languageName: node
+  linkType: hard
+
 "@lowdefy/telemetry-api@workspace:.":
   version: 0.0.0-use.local
   resolution: "@lowdefy/telemetry-api@workspace:."
@@ -1458,6 +1490,7 @@ __metadata:
     "@babel/cli": 7.12.8
     "@babel/core": 7.12.9
     "@babel/preset-env": 7.12.7
+    "@lowdefy/ajv": 1.1.0
     "@yarnpkg/pnpify": 2.4.0
     babel-jest: 26.6.3
     babel-loader: 8.2.2
@@ -2236,6 +2269,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"a-sync-waterfall@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "a-sync-waterfall@npm:1.0.1"
+  checksum: da11585ce7067691fa27ce2c4b731dfb632b090cfe32decb8a6f6e9b2cd6150353a5d78f1eb4555d4a9f8849eb66f443b34f3324dd0099badf208aea335be7f4
+  languageName: node
+  linkType: hard
+
 "abab@npm:^2.0.3":
   version: 2.0.5
   resolution: "abab@npm:2.0.5"
@@ -2304,6 +2344,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ajv-errors@npm:1.0.1":
+  version: 1.0.1
+  resolution: "ajv-errors@npm:1.0.1"
+  peerDependencies:
+    ajv: ">=5.0.0"
+  checksum: d8356aadcb8a602c69c8eefca1aff93271316c45c42b975606346cfd7c3f9bf56569c15bd2fe18bee5ae16d4db15fb9b0b12cb48c057335980993978c5ff2450
+  languageName: node
+  linkType: hard
+
 "ajv-keywords@npm:^3.5.2":
   version: 3.5.2
   resolution: "ajv-keywords@npm:3.5.2"
@@ -2313,7 +2362,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ajv@npm:^6.10.0, ajv@npm:^6.10.2, ajv@npm:^6.12.3, ajv@npm:^6.12.4, ajv@npm:^6.12.5":
+"ajv@npm:6.12.6, ajv@npm:^6.10.0, ajv@npm:^6.10.2, ajv@npm:^6.12.3, ajv@npm:^6.12.4, ajv@npm:^6.12.5":
   version: 6.12.6
   resolution: "ajv@npm:6.12.6"
   dependencies:
@@ -2560,7 +2609,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"asap@npm:~2.0.3":
+"asap@npm:^2.0.3, asap@npm:~2.0.3":
   version: 2.0.6
   resolution: "asap@npm:2.0.6"
   checksum: 3d314f8c598b625a98347bacdba609d4c889c616ca5d8ea65acaae8050ab8b7aa6630df2cfe9856c20b260b432adf2ee7a65a1021f268ef70408c70f809e3a39
@@ -3131,7 +3180,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:^3.2.2, chokidar@npm:^3.4.0":
+"chokidar@npm:^3.2.2, chokidar@npm:^3.3.0, chokidar@npm:^3.4.0":
   version: 3.4.3
   resolution: "chokidar@npm:3.4.3"
   dependencies:
@@ -3340,6 +3389,13 @@ __metadata:
   version: 4.1.1
   resolution: "commander@npm:4.1.1"
   checksum: 448585071bf8fb4c0bf9dd52abaee43dea086f801334caec2c8e8c9f456f8abc224c1614ccbbdbf7da5ac2524d230f13cf1fc86c233cf8a041ebecea7df106e9
+  languageName: node
+  linkType: hard
+
+"commander@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "commander@npm:5.1.0"
+  checksum: d16141ea7f580945156fb8a06de2834c4647c7d9d3732ebd4534ab8e0b7c64747db301e18f2b840f28ea8fef51f7a8d6178e674b45a21931f0b65ff1c7f476b3
   languageName: node
   linkType: hard
 
@@ -6662,6 +6718,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"lodash.merge@npm:4.6.2":
+  version: 4.6.2
+  resolution: "lodash.merge@npm:4.6.2"
+  checksum: 4e2bb42a87a148991458d7c384bc197e96f7115e9536fc8e2c86ae9e99ce1c1f693ff15eb85761952535f48d72253aed8e673d9f32dde3e671cd91e3fde220a7
+  languageName: node
+  linkType: hard
+
 "lodash.sortby@npm:^4.7.0":
   version: 4.7.0
   resolution: "lodash.sortby@npm:4.7.0"
@@ -6935,6 +6998,13 @@ fsevents@~2.1.2:
   bin:
     mkdirp: bin/cmd.js
   checksum: 1aa3a6a2d7514f094a91329ec09994f5d32d2955a4985ecbb3d86f2aaeafc4aa11521f98d606144c1d49cd9835004d9a73342709b8c692c92e59eacf37412468
+  languageName: node
+  linkType: hard
+
+"moment@npm:^2.9.0":
+  version: 2.29.1
+  resolution: "moment@npm:2.29.1"
+  checksum: 86729013febf7160de5b93da69273dd304d674b0224f9544b3abd09a87671ddd2cdd57598261ce57588910d63747ffd5590965e83c790d8bf327083c0e0a06e0
   languageName: node
   linkType: hard
 
@@ -7225,6 +7295,32 @@ fsevents@~2.1.2:
   version: 1.0.1
   resolution: "number-is-nan@npm:1.0.1"
   checksum: 42251b2653a16f8b47639d93c3b646fff295a4582a6b3a2fc51a651d4511427c247629709063d19befbceb8a3db1a8e9f17016b3a207291e79e4bd1413032918
+  languageName: node
+  linkType: hard
+
+"nunjucks-date-filter@npm:0.1.1":
+  version: 0.1.1
+  resolution: "nunjucks-date-filter@npm:0.1.1"
+  dependencies:
+    moment: ^2.9.0
+  checksum: 45663784cf45758ac05bcd0e796e332b96601e934f95782cdf0a712e1ace14712b49dcbed750a986bd5706608d08edbad3588d66a9d436a036c7e0032ebb30e2
+  languageName: node
+  linkType: hard
+
+"nunjucks@npm:3.2.2":
+  version: 3.2.2
+  resolution: "nunjucks@npm:3.2.2"
+  dependencies:
+    a-sync-waterfall: ^1.0.0
+    asap: ^2.0.3
+    chokidar: ^3.3.0
+    commander: ^5.1.0
+  dependenciesMeta:
+    chokidar:
+      optional: true
+  bin:
+    nunjucks-precompile: bin/precompile
+  checksum: ad7ac5ab621d30375ae8bd5e2f1fa4c87e652079179b63a8dc6d0fdb483ab283ba042f38675553a56db606a1accec19c1aade37b2e437520ab4e398b5f1dfbdd
   languageName: node
   linkType: hard
 
@@ -7932,6 +8028,17 @@ fsevents@~2.1.2:
   version: 6.5.2
   resolution: "qs@npm:6.5.2"
   checksum: fa0410eff2c05ce3328e11f82db4015e7819c986ee056d6b62b06ae112f4929af09ea3b879ca168ff9f0338f50972bba487ad0e46c879e42bfaf63c3c2ea7f09
+  languageName: node
+  linkType: hard
+
+"query-string@npm:6.13.7":
+  version: 6.13.7
+  resolution: "query-string@npm:6.13.7"
+  dependencies:
+    decode-uri-component: ^0.2.0
+    split-on-first: ^1.0.0
+    strict-uri-encode: ^2.0.0
+  checksum: b6d9ef79b77640456e764dcb427591e6079616141aa68f1dae444387864cbc44f945d766085a1ebef1e0fa1b0f8faa8925a96eaebf933119b97bacc12c5d22e5
   languageName: node
   linkType: hard
 
@@ -8883,6 +8990,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"split-on-first@npm:^1.0.0":
+  version: 1.1.0
+  resolution: "split-on-first@npm:1.1.0"
+  checksum: 2ef26fee62665be9547e8035734b856e658b08fd13e70271a2f258147f29d1f18e12b5cb7f7670d83e113c172a9c5fe3d87d9d7c02a1d3d57824818d75d942ab
+  languageName: node
+  linkType: hard
+
 "split-string@npm:^3.0.1, split-string@npm:^3.0.2":
   version: 3.1.0
   resolution: "split-string@npm:3.1.0"
@@ -8977,6 +9091,13 @@ fsevents@~2.1.2:
     end-of-stream: ~1.1.0
     stream-to-array: ~2.3.0
   checksum: 1f26f85d571d94a308f9332c79f2652697f9893733e3a2aebca1aaaf4d2a0d0655150b8b0a88105256a50510d9e9b8a0b1e5d9139b464ee1f9285be3647c3b83
+  languageName: node
+  linkType: hard
+
+"strict-uri-encode@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "strict-uri-encode@npm:2.0.0"
+  checksum: 775012e88b9d8dff939d514bf376d615a15e8228a5dd587a94ac3c71fce41aa3635cd808aa796e2c1cd33f3f2fe2fbf89b74ee18a504a1905efa1854311e04bb
   languageName: node
   linkType: hard
 

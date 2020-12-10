@@ -13,20 +13,20 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 */
+import { validate } from '@lowdefy/ajv';
 
 function makeRouteHandler(route) {
-  const { path, method, resolver } = route;
+  const { path, method, resolver, schema } = route;
   async function handler(req, res, next) {
     try {
-      // const validation = req.context.ajv.validate(route.schema, req.body);
-      // if (!validation) {
-      //   throw new req.context.Error.ValidationError({
-      //     message: `Invalid request: ${req.context.ajv.errors.map((err) => err.message)}`,
-      //     error: 'ValidationError',
-      //     method: `route:${path}`,
-      //     payload: req.body,
-      //   });
-      // }
+      const { valid, errors } = validate({
+        schema,
+        data: req.body,
+      });
+    } catch (error) {
+      throw new req.context.Error.ValidationError(error)
+    }
+    try {
       const response = await resolver(req);
       return res.status(response.code).json(response);
     } catch (error) {
