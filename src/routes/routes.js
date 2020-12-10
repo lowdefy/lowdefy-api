@@ -15,12 +15,12 @@
 */
 
 import makeRouteHandler from '../utils/makeRouteHandler';
-import helloGet from './hello/get';
+import helloPost from './hello/post';
 
 const routes = [
   {
     path: '/hello',
-    method: 'get',
+    method: 'post',
     resolver: helloGet.resolver,
     schema: helloGet.schema,
   },
