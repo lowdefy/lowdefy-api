@@ -18,5 +18,7 @@ functions:
   lowdefy-telemetry-api-server:
     handler: dist/handler.handler
     name: lowdefy-telemetry-api-server
+    environment:
+      MONGODB_URI: ${param:MONGODB_URI}
     events:
       - httpApi: '*'
