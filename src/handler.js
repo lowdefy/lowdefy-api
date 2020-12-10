@@ -17,14 +17,14 @@
 import serverless from 'serverless-http';
 import createServer from './createServer';
 
-const contextParams = {
+const options = {
   DATABASE_NAME: process.env.DATABASE_NAME,
   secrets: {
     MONGODB_URI: process.env.MONGODB_URI,
   },
   collections: {},
 };
-const server = createServer({ contextParams });
+const server = createServer({ options });
 const handler = serverless(server);
 
 // eslint-disable-next-line import/prefer-default-export

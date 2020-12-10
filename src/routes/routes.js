@@ -15,14 +15,14 @@
 */
 
 import makeRouteHandler from '../utils/makeRouteHandler';
-import helloGet from './hello/get';
+import helloPost from './hello/post';
 
 const routes = [
   {
     path: '/hello',
-    method: 'get',
-    resolver: helloGet.resolver,
-    schema: helloGet.schema,
+    method: 'post',
+    resolver: helloPost.resolver,
+    schema: helloPost.schema,
   },
 ].map((route) => makeRouteHandler(route));
 

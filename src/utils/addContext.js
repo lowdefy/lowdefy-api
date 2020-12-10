@@ -14,11 +14,12 @@
   limitations under the License.
 */
 
+import createMongoDb from './createMongoDb';
 import errors from './errors';
 
 function addContext(options) {
   const context = { errors };
-
+  context.getMongoDb = createMongoDb(options);
   function addContextMiddleware(req, res, next) {
     req.context = context;
     next();

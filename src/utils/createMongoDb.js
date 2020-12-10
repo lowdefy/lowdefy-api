@@ -18,17 +18,17 @@ import { MongoClient } from 'mongodb';
 // import { serialize } from '../helpers/serialize';
 
 class MongoDb {
-  constructor(context) {
-    this.context = context;
+  constructor(options) {
+    this.options = options;
   }
 
   async connect() {
-    this.client = new MongoClient(this.context.secrets.MONGODB_URI, {
+    this.client = new MongoClient(this.options.secrets.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
     await this.client.connect();
-    this.db = this.client.db(this.context.DATABASE_NAME);
+    this.db = this.client.db();
   }
 
   async find({ collection, query, options }) {
@@ -60,14 +60,14 @@ class MongoDb {
   }
 }
 
-function createMongoDb(context) {
+function createMongoDb(options) {
   let memoized = null;
 
   async function getMongoDb() {
     if (memoized && memoized.client && memoized.client.isConnected()) {
       return memoized;
     }
-    memoized = new MongoDb(context);
+    memoized = new MongoDb(options);
     await memoized.connect();
     return memoized;
   }

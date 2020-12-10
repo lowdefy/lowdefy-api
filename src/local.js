@@ -19,7 +19,7 @@ import createServer from './createServer';
 
 dotenv.config({ silent: true });
 
-const contextParams = {
+const options = {
   DATABASE_NAME: process.env.DATABASE_NAME,
   PORT: process.env.PORT,
   secrets: {
@@ -28,8 +28,6 @@ const contextParams = {
   collections: {},
 };
 
-const server = createServer({ contextParams });
+const server = createServer({ options });
 
-server.listen(contextParams.PORT, () =>
-  console.log(`API listening started on port ${contextParams.PORT}`)
-);
+server.listen(options.PORT, () => console.log(`API listening started on port ${options.PORT}`));
