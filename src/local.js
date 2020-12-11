@@ -20,12 +20,10 @@ import createServer from './createServer';
 dotenv.config({ silent: true });
 
 const options = {
-  DATABASE_NAME: process.env.DATABASE_NAME,
   PORT: process.env.PORT,
   secrets: {
     MONGODB_URI: process.env.MONGODB_URI,
   },
-  collections: {},
 };
 
 const server = createServer({ options });

@@ -18,11 +18,9 @@ import serverless from 'serverless-http';
 import createServer from './createServer';
 
 const options = {
-  DATABASE_NAME: process.env.DATABASE_NAME,
   secrets: {
     MONGODB_URI: process.env.MONGODB_URI,
   },
-  collections: {},
 };
 const server = createServer({ options });
 const handler = serverless(server);
