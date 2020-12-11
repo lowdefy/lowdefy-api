@@ -31,5 +31,5 @@ resources:
         Fn::Join:
           - ''
           - - 'https://'
-            - Ref: ApiGatewayRestApi
+            - !Ref: ApiGatewayRestApi
             - '.execute-api.${self:provider.region}.amazonaws.com'
