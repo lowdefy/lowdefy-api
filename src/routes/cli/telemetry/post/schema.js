@@ -14,23 +14,6 @@
   limitations under the License.
 */
 
-import makeRouteHandler from '../utils/makeRouteHandler';
-import cliErrors from './cli/errors/post';
-import cliTelemetry from './cli/telemetry/post';
+const schema = {};
 
-const routes = [
-  {
-    path: '/cli/errors',
-    method: 'post',
-    resolver: cliErrors.resolver,
-    schema: cliErrors.schema,
-  },
-  {
-    path: '/cli/telemetry',
-    method: 'post',
-    resolver: cliTelemetry.resolver,
-    schema: cliTelemetry.schema,
-  },
-].map((route) => makeRouteHandler(route));
-
-export default routes;
+export default schema;
