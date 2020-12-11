@@ -14,23 +14,17 @@
   limitations under the License.
 */
 
-import makeRouteHandler from '../utils/makeRouteHandler';
-import cliErrors from './cli/errors/post';
-import cliTelemetry from './cli/telemetry/post';
+// eslint-disable-next-line no-unused-vars
+async function cliErrors({ body, context, headers, ip }) {
+  const doc = {
+    body,
+    headers,
+    ip,
+    timestamp: new Date(),
+  };
+  const mongodb = await context.getMongoDb();
+  await mongodb.insertOne({ collection: 'cli_errors', doc });
+  return { code: 200, status: 'Success', message: 'Inserted' };
+}
 
-const routes = [
-  {
-    path: '/cli/errors',
-    method: 'post',
-    resolver: cliErrors.resolver,
-    schema: cliErrors.schema,
-  },
-  {
-    path: '/cli/telemetry',
-    method: 'post',
-    resolver: cliTelemetry.resolver,
-    schema: cliTelemetry.schema,
-  },
-].map((route) => makeRouteHandler(route));
-
-export default routes;
+export default cliErrors;

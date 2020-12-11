@@ -1,11 +1,9 @@
-name: Test Branches
+name: Tests
 
 on:
   push:
     branches:
       - main
-      - develop
-
 jobs:
   test:
     runs-on: ubuntu-latest

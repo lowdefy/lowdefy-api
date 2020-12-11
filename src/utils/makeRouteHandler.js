@@ -19,12 +19,12 @@ function makeRouteHandler(route) {
   const { path, method, resolver, schema } = route;
   async function handler(req, res, next) {
     try {
-      const { valid, errors } = validate({
+      validate({
         schema,
         data: req.body,
       });
     } catch (error) {
-      throw new req.context.Error.ValidationError(error)
+      throw new req.context.Error.ValidationError(error);
     }
     try {
       const response = await resolver(req);

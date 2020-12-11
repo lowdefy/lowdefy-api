@@ -15,10 +15,16 @@
 */
 
 // eslint-disable-next-line no-unused-vars
-async function hello({ body, context }) {
+async function cliTelemetry({ body, context, headers, hostname, ip }) {
+  const doc = {
+    body,
+    headers,
+    ip,
+    timestamp: new Date(),
+  };
   const mongodb = await context.getMongoDb();
-  await mongodb.insertOne({ collection: 'hello', doc: body });
+  await mongodb.insertOne({ collection: 'cli_telemety', doc });
   return { code: 200, status: 'Success', message: 'Inserted' };
 }
 
-export default hello;
+export default cliTelemetry;
