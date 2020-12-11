@@ -15,21 +15,21 @@
 */
 
 import makeRouteHandler from '../utils/makeRouteHandler';
-import cliErrors from './cli/errors/post';
-import cliTelemetry from './cli/telemetry/post';
+import errors from './errors/post';
+import telemetryCli from './telemetry/cli/post';
 
 const routes = [
   {
-    path: '/cli/errors',
+    path: '/errors',
     method: 'post',
-    resolver: cliErrors.resolver,
-    schema: cliErrors.schema,
+    resolver: errors.resolver,
+    schema: errors.schema,
   },
   {
-    path: '/cli/telemetry',
+    path: '/telemetry/cli',
     method: 'post',
-    resolver: cliTelemetry.resolver,
-    schema: cliTelemetry.schema,
+    resolver: telemetryCli.resolver,
+    schema: telemetryCli.schema,
   },
 ].map((route) => makeRouteHandler(route));
 

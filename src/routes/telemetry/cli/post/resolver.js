@@ -23,7 +23,7 @@ async function cliTelemetry({ body, context, headers, hostname, ip }) {
     timestamp: new Date(),
   };
   const mongodb = await context.getMongoDb();
-  await mongodb.insertOne({ collection: 'cli_telemety', doc });
+  await mongodb.insertOne({ collection: 'telemetry-cli', doc });
   return { code: 200, status: 'Success', message: 'Inserted' };
 }
 

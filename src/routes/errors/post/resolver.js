@@ -23,7 +23,7 @@ async function cliErrors({ body, context, headers, ip }) {
     timestamp: new Date(),
   };
   const mongodb = await context.getMongoDb();
-  await mongodb.insertOne({ collection: 'cli_errors', doc });
+  await mongodb.insertOne({ collection: 'errors', doc });
   return { code: 200, status: 'Success', message: 'Inserted' };
 }
 

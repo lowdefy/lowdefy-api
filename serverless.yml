@@ -1,6 +1,6 @@
 org: lowdefy
-service: lowdefy-telemetry-api
-app: lowdefy-telemetry-api
+service: lowdefy-api
+app: lowdefy-api
 
 frameworkVersion: '2'
 provider:
@@ -8,16 +8,16 @@ provider:
   runtime: nodejs12.x
   versionFunctions: false
   region: eu-west-1
-  deploymentPrefix: lowdefy-telemetry-api
+  deploymentPrefix: lowdefy-api
 
 package:
   include:
     - dist/**
 
 functions:
-  lowdefy-telemetry-api-server:
+  lowdefy-api-server:
     handler: dist/handler.handler
-    name: lowdefy-telemetry-api-server-${opt:stage}
+    name: lowdefy-api-server-${opt:stage}
     environment:
       MONGODB_URI: ${param:MONGODB_URI}
     events:
