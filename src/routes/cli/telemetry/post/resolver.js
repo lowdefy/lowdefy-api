@@ -19,7 +19,6 @@ async function cliTelemetry({ body, context, headers, hostname, ip }) {
   const doc = {
     body,
     headers,
-    hostname,
     ip,
     timestamp: new Date(),
   };

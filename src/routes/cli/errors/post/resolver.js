@@ -15,10 +15,11 @@
 */
 
 // eslint-disable-next-line no-unused-vars
-async function cliErrors({ body, context, headers }) {
+async function cliErrors({ body, context, headers, ip }) {
   const doc = {
     body,
     headers,
+    ip,
     timestamp: new Date(),
   };
   const mongodb = await context.getMongoDb();
