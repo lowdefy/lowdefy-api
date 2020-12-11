@@ -22,14 +22,3 @@ functions:
       MONGODB_URI: ${param:MONGODB_URI}
     events:
       - httpApi: '*'
-
-resources:
-  Outputs:
-    ApiUrl:
-      Description: 'The API Gateway URL'
-      Value:
-        Fn::Join:
-          - ''
-          - - 'https://'
-            - !Ref: ApiGatewayRestApi
-            - '.execute-api.${self:provider.region}.amazonaws.com'
