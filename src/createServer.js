@@ -29,8 +29,19 @@ const createServer = ({ options }) => {
   app.use(logger('dev'));
   app.use(express.json());
   app.use(addContext(options));
-  app.use(cors());
-
+  app.use(
+    cors({
+      origin: '*',
+      methods: ['GET', 'POST'],
+    })
+  );
+  app.options(
+    '*',
+    cors({
+      origin: '*',
+      methods: ['GET', 'POST'],
+    })
+  );
   // routes
   routes.forEach((route) => {
     app[route.method](route.path, route.handler);
