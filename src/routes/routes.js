@@ -16,6 +16,7 @@
 
 import makeRouteHandler from '../utils/makeRouteHandler';
 import errors from './errors/post';
+import marketing from './marketing/post';
 import telemetryCli from './telemetry/cli/post';
 
 const routes = [
@@ -24,6 +25,12 @@ const routes = [
     method: 'post',
     resolver: errors.resolver,
     schema: errors.schema,
+  },
+  {
+    path: '/marketing',
+    method: 'post',
+    resolver: marketing.resolver,
+    schema: marketing.schema,
   },
   {
     path: '/telemetry/cli',
