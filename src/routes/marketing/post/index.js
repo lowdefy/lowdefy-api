@@ -13,11 +13,10 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 */
-import insertRequestMongoDB from '../../../../utils/insertRequestMongoDB';
 
-async function cliTelemetry(req) {
-  await insertRequestMongoDB({ req, collection: 'telemetry-cli' });
-  return { code: 200, status: 'Success', message: 'Inserted' };
-}
+import resolver from './resolver';
+import schema from './schema';
 
-export default cliTelemetry;
+const route = { resolver, schema };
+
+export default route;

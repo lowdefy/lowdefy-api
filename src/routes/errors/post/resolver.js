@@ -13,17 +13,10 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 */
+import insertRequestMongoDB from '../../../utils/insertRequestMongoDB';
 
-// eslint-disable-next-line no-unused-vars
-async function cliErrors({ body, context, headers, ip }) {
-  const doc = {
-    body,
-    headers,
-    ip,
-    timestamp: new Date(),
-  };
-  const mongodb = await context.getMongoDb();
-  await mongodb.insertOne({ collection: 'errors', doc });
+async function cliErrors(req) {
+  await insertRequestMongoDB({ req, collection: 'errors' });
   return { code: 200, status: 'Success', message: 'Inserted' };
 }
 
