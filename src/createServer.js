@@ -14,6 +14,7 @@
   limitations under the License.
 */
 
+import cors from 'cors';
 import express from 'express';
 import logger from 'morgan';
 
@@ -28,6 +29,7 @@ const createServer = ({ options }) => {
   app.use(logger('dev'));
   app.use(express.json());
   app.use(addContext(options));
+  app.use(cors());
 
   // routes
   routes.forEach((route) => {
