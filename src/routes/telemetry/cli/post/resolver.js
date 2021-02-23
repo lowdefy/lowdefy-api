@@ -16,7 +16,7 @@
 import insertRequestMongoDB from '../../../../utils/insertRequestMongoDB';
 
 async function cliTelemetry(req) {
-  await insertRequestMongoDB({ req, collection: 'telemetry-cli' });
+  await insertRequestMongoDB({ req, collection: 'telemetry' });
   return { code: 200, status: 'Success', message: 'Inserted' };
 }
 

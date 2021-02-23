@@ -1,5 +1,5 @@
 /*
-  Copyright 2020-2021 Lowdefy, Inc
+  Copyright 2020 Lowdefy, Inc
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -14,17 +14,6 @@
   limitations under the License.
 */
 
-async function insertRequestMongoDB({ req, collection }) {
-  const { body, context, headers, ip, url } = req;
-  const doc = {
-    body,
-    headers,
-    ip,
-    timestamp: new Date(),
-    url,
-  };
-  const mongodb = await context.getMongoDb();
-  await mongodb.insertOne({ collection, doc });
-}
-
-export default insertRequestMongoDB;
+test('philosophical', () => {
+  expect().toBe();
+});
